@@ -47,6 +47,7 @@ li {
 }
 
 .button{
+    display: inline-block;
     background-color: transparent;
     border: 1px solid var(--primary-color);
     border-radius: 16px;
@@ -55,6 +56,16 @@ li {
     line-height: 100%;
     padding: 24px 32px;
     cursor: pointer;
+    transition: border .3s ease;
+    white-space: nowrap;
+}
+
+.button:hover{
+    border: 1px solid var(--white-color);
+}
+
+.button:active{
+    border: 1px solid var(--white-color);
 }
 
 /* all clapm functions from 1840px to 360px */
@@ -65,6 +76,7 @@ li {
 
 .header{
     position: fixed;
+    z-index: 1;
     top: 0;
     left: 0;
     width: 100%;
@@ -117,6 +129,7 @@ li {
     width: 100%;
     height: 100%;
     position: fixed;
+    z-index: 1;
     transform: translateX(100%);
     transition: transform .3s ease;
     display: flex;
@@ -154,7 +167,7 @@ li {
     margin-top: clamp(4rem, 2.7382rem + 5.6081vw, 9.1875rem); /* 147px > 64px */
 }
 
-.hero__conteiner{
+.hero__container{
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -191,6 +204,141 @@ li {
 
 /* ============================================================================ */
 
+/* PLAYER */
+
+.player{
+    position: relative;
+    height: clamp(40rem, 36.3514rem + 16.2162vw, 55rem); /* 880px > 640px */
+    background-image: url(./images/garry.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    padding-top: 70px;
+}
+
+.player__container{
+    height: 100%;
+}
+
+.player__name{
+    margin-left: auto;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 100%;
+    text-align: right;
+    text-transform: uppercase;
+}
+
+.player__content{
+    width: 50%;
+    height: 100%;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.player__content-description{
+    margin-bottom: 80px;
+    font-weight: 400;
+    font-size: clamp(0.875rem, 0.7838rem + 0.4054vw, 1.25rem); /* 20px > 14px */
+    line-height: 100%;
+    text-align: center;
+}
+
+/* ============================================================================ */
+
+/* VOITING */
+
+.voting{
+    height: clamp(40rem, 36.3514rem + 16.2162vw, 55rem); /* 880px > 640px */
+    background-image: url(./images/background.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    margin-bottom: clamp(0rem, -1.2162rem + 5.4054vw, 5rem); /* 80px > 0px */
+}
+
+.voting__container, .voting__content{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.voting__content-description{
+    font-weight: 400;
+    font-size: clamp(0.8125rem, 0.7061rem + 0.473vw, 1.25rem); /* 20px > 13px */
+    line-height: 100%;
+}
+
+.voting__content-description:not(:last-child){
+    margin-bottom: 16px;
+}
+
+.voting__content-buttons{
+    margin-top: clamp(5rem, 5.3041rem + -1.3514vw, 3.75rem); /* 60px > 80px */
+}
+
+.voting__button:not(:last-child){
+    margin-right: 24px;
+}
+
+/* ============================================================================ */
+
+/* FOOTER */
+.footer{
+    min-height: 295px;
+    padding-top: 64px;
+}
+
+.footer__container{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.footer__link, .footer__link--special{
+    display: inline-block;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+}
+
+.footer__item:not(:last-child){
+    margin-bottom: 16px;
+}
+
+.footer__link--special{
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+
+.footer__link--inactive{
+    filter: brightness(0.4)
+}
+
+.footer__link--active{
+    filter: brightness(1)
+}
+
+.footer__list-social-link{
+    display: inline-block;
+}
+
+.footer__vk, .footer__youtube{
+    width: 28px;
+    height: 28px;
+}
+
+.footer__vk{
+    margin-right: 16px;
+}
+
+/* ============================================================================ */
+
 /* MEDIA QUERIES */
 
 @media(max-width: 768px){
@@ -202,5 +350,53 @@ li {
     }
     .hero{
         background-image: url(./images/hero-mobile.png);
+    }
+    .player{
+        background-image: url(./images/garry-mobile.png);
+    }
+    .player__content{
+        width: 100%;
+        position: absolute;
+        top: 12px;
+        left: 0px;
+        height: 96%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .voting{
+        background-image: url(./images/background-mobile.png);
+    }
+    .voting__button:not(:last-child){
+        margin-right: 0px;
+        margin-bottom: 24px;
+    }
+    .voting__content-buttons{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer{
+        padding-bottom: 64px;
+    }
+    .footer__container{
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer__list{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .footer__list:not(:last-child){
+        margin-bottom: 110px;
+    }
+    .footer__list-social{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }   
