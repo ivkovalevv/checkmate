@@ -381,6 +381,143 @@ li {
     margin-bottom: 20px;
 }
 
+/* ============================================================================ */
+
+/* TABLE */
+
+.table{
+    height: clamp(42.3125rem, 38.0101rem + 19.1216vw, 60rem); /* 960px > 677px */
+    background-image: url(./images/table-background.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    margin-top: clamp(4rem, 2.7382rem + 5.6081vw, 9.1875rem); /* 147px > 64px */
+}
+
+.table__container{
+    height: 100%;
+}
+
+.table__content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: clamp(5.1875rem, 3.3024rem + 8.3784vw, 12.9375rem); /* 207px > 83px */
+}
+
+.table__heading{
+    width: 50%;
+    text-align: center;
+    font-weight: 700;
+    font-size: clamp(2rem, 1.8784rem + 0.5405vw, 2.5rem); /* 40px > 32px */
+    line-height: 100%;
+}
+
+.table__table-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.table__table{
+    border: 1px solid var(--primary-color);
+    padding: clamp(1.5rem, 0.8919rem + 2.7027vw, 4rem); /* 64px > 24px */
+}
+
+.table__player, .table__player-lastname{
+    font-weight: 400;
+    font-size: clamp(0.8125rem, 0.7061rem + 0.473vw, 1.25rem); /* 20px > 13px */
+    line-height: 100%;
+}
+
+.table__line{
+    display: flex;
+}
+
+.table__column:first-child{
+    width: clamp(6.25rem, 2.9054rem + 14.8649vw, 20rem); /* 320px > 100px */
+    justify-content: flex-start;
+}
+
+.table__column{
+    width: 55px;
+    height: 59px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+    font-size: clamp(0.8125rem, 0.7669rem + 0.2027vw, 1rem); /* 16px > 13px */
+    line-height: 100%;
+    text-align: center;
+}
+
+.table__column:last-child{
+    width: clamp(3.0625rem, 2.5456rem + 2.2973vw, 5.1875rem); /* 83px > 49px */
+}
+
+.chess-piece{
+    width: 20px;
+    height: 32px;
+}
+
+.chess-piece-down{
+    width: 33px;
+    height: 20px;
+}
+
+.table__line-empty .table__column{
+    height: 29px;
+}
+
+.table__column:nth-child(5){
+    background-color: var(--primary-color);
+    color: var(--black-color);
+}
+
+.table__content-after{
+    width: clamp(36.25rem, 34.7297rem + 6.7568vw, 42.5rem); /* 680px > 580px */
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: clamp(1.125rem, 0.5929rem + 2.3649vw, 3.3125rem); /* 53px > 18px; */
+}
+
+.table__content-after-title{
+    font-weight: 400;
+    font-size: clamp(0.8125rem, 0.7061rem + 0.473vw, 1.25rem); /* 20px > 13px */
+    line-height: 100%;
+}
+
+.table__content-after-wrapper{
+    display: flex;
+    align-items: center;
+    margin-left: 80px;
+}
+
+.watch{
+    width: 27px;
+    height: 27px;
+    margin-right: 16px;
+}
+
+.table__content-after-description{
+    font-weight: 400;
+    font-size: clamp(0.8125rem, 0.7669rem + 0.2027vw, 1rem); /* 16px > 13px */
+    line-height: 100%;
+}
+
+.table__content-after-description:not(:last-child){
+    margin-right: 16px;
+}
+
+.table__content-after-link{
+    text-decoration-line: underline;
+    text-decoration-thickness: 1px;
+}
+
+/* ============================================================================ */
+
 /* FOOTER */
 
 .footer{
@@ -484,6 +621,37 @@ li {
     }
     .participant-about{
         background-image: url(./images/participant-background-mobile.png);
+    }
+    .table{
+        background-image: url(./images/table-background-mobile.png);
+    }
+    .table__player-lastname{
+        display: none;
+    }
+    .table__content{
+        flex-direction: column;
+    }
+    .table__heading{
+        margin-bottom: 32px;
+    }
+    .table__column-empty{
+        display: none;
+    }
+    .table__column {
+        width: 35px;
+    }
+    .table__heading{
+        width: 100%;
+    }
+    .table__content-after{
+        width: 100%;
+        flex-direction: column;
+    }
+    .table__content-after-title{
+        margin-bottom: 16px;
+    }
+    .table__content-after-wrapper{
+        margin-left: 0px;
     }
 
     .footer{
