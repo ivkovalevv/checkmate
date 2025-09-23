@@ -49,6 +49,15 @@ const imagesMin = () => {
     .pipe(dest("build/images"))
 }
 
+const scripts = () => {
+    return src("src/js/main.js")
+    .pipe(sourcemaps.init())
+    .pipe(concat("app.js"))
+    .pipe(sourcemaps.write())
+    .pipe(dest("build"))
+    .pipe(browserSync.stream())
+}
+
 const watchFiles = () => {
     browserSync.init({
         server: {
@@ -59,9 +68,11 @@ const watchFiles = () => {
 
 watch("src/**/*.html", html);
 watch("src/styles/**/*.css", styles);
+watch("src/js/**/*.js", scripts);
 watch("src/images/svg/**/*.svg", svgSprites);
 
 exports.clean = clean;
 exports.html = html;
 exports.styles = styles;
-exports.default = series(clean, html, styles, imagesMin, svgSprites, watchFiles)
+exports.scripts = scripts;
+exports.default = series(clean, html, styles, scripts, imagesMin, svgSprites, watchFiles)

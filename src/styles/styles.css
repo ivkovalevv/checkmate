@@ -3,6 +3,7 @@
 :root {
   --black-color: #000000;
   --white-color: #FFFFFF;
+  --primary-color: #AEE8F0;
 }
 
 * {
@@ -39,7 +40,7 @@ li {
   padding: 0;
 }
 
-.ivk-container{
+.container{
     max-width: 1840px; 
     width: 95%;
     margin: 0 auto;
@@ -48,3 +49,63 @@ li {
 /* all clapm functions from 1840px to 360px */
 
 /* ============================================================================ */
+
+/* HEADER */
+
+.header{
+    width: 100%;
+    height: clamp(4rem, 2.7382rem + 5.6081vw, 9.1875rem); /* 147px > 64px */
+}
+
+.header__container{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__logo{
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 100%;
+}
+
+.nav{
+    display: flex;
+    align-items: center;
+}
+
+.nav-item:not(:last-child){
+    margin-right: 40px;
+}
+
+.nav-item-link{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+}
+
+.burger{
+    display: none;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.burger-button{
+    width: 18px;
+    height: 17px;
+}
+
+/* ============================================================================ */
+
+/* MEDIA QUERIES */
+
+@media(max-width: 768px){
+    .header__nav{
+        display: none;
+    }
+    .burger{
+        display: block;
+    }
+}   
