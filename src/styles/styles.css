@@ -112,6 +112,10 @@ li {
     line-height: 100%;
 }
 
+.nav-item-link--active{
+    color: var(--primary-color);
+}
+
 .burger{
     display: none;
     background-color: transparent;
@@ -288,7 +292,97 @@ li {
 
 /* ============================================================================ */
 
+/* PARTICIPANT HERO */
+
+.participant-hero{
+    height: clamp(40rem, 36.3514rem + 16.2162vw, 55rem); /* 880px > 640px */
+    background-image: url(./images/magnus.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    margin-top: clamp(4rem, 2.7382rem + 5.6081vw, 9.1875rem); /* 147px > 64px */
+}
+
+.participant-hero__container{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.participant-hero__content{
+    width: 50%;
+    height: 100%;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.participant-hero__heading{
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 100%;
+    margin-bottom: 24px;
+}
+
+.participant-hero__location-wrapper{
+    display: flex;
+    align-items: center;
+}
+
+.location{
+    width: 20px;
+    height: 31px;
+    margin-right: 16px;
+}
+
+.participant-hero__location{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+}
+
+/* ============================================================================ */
+
+/* PARTICIPANT ABOUT */
+
+.participant-about{
+    height: clamp(40rem, 36.3514rem + 16.2162vw, 55rem); /* 880px > 640px */
+    background-image: url(./images/participant-background.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.participant-about__container{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.participant-about__description{
+    max-width: 560px;
+    width: 95%;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    text-align: center;
+}
+
+.participant-about__button{
+    margin-top: 64px;
+}
+
+.participant-about__description:not(:last-child){
+    margin-bottom: 20px;
+}
+
 /* FOOTER */
+
 .footer{
     min-height: 295px;
     padding-top: 64px;
@@ -377,6 +471,21 @@ li {
         flex-direction: column;
         align-items: center;
     }
+    .participant-hero{
+        background-image: url(./images/magnus-mobile.png);
+    }
+    .participant-hero__container{
+        justify-content: flex-start;
+    }
+    .participant-hero__content{
+        width: 100%;
+        height: fit-content;
+        padding-top: 63px;
+    }
+    .participant-about{
+        background-image: url(./images/participant-background-mobile.png);
+    }
+
     .footer{
         padding-bottom: 64px;
     }
